@@ -20,20 +20,17 @@
         HOW TO ACTIVATE THE <span class="text-red">SPEECH SWITCH</span> IN YOUR NON-VERBAL AUTISTIC CHILD IN UNDER <span class="badge-red">14 DAYS</span>
       </h1>
 
-      <!-- VERTICAL VIDEO PLAYER AREA -->
+      <!-- VERTICAL VSL PLAYER -->
       <div class="video-wrapper">
-        <div class="video-progress-bar" aria-hidden="true"></div>
-        <video id="main-video" class="video-element" poster="/assets/video-cover.jpg" playsinline muted loop autoplay>
-          <source src="https://cdn.converteai.net/1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-
-        <!-- Interactive Audio Tap Overlay -->
-        <div id="video-overlay" class="video-overlay-banner" role="button" tabindex="0" aria-label="Activate audio">
-          <div class="video-overlay-status">Your video has started</div>
-          <div class="video-overlay-icon" aria-hidden="true">🔊</div>
-          <div class="video-overlay-cta">Click to listen</div>
-        </div>
+        <vturb-smartplayer id="vid-6abbdf569791d41fa00cf387" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
+          <div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 125% 0 0; z-index: 0; background-color: black;"></div>
+        </vturb-smartplayer>
+        <script type="text/javascript">
+          var s = document.createElement("script");
+          s.src = "https://scripts.converteai.net/dc8ab8c0-f9ac-47c3-af12-a4174ba40c45/players/6abbdf569791d41fa00cf387/v4/player.js";
+          s.async = true;
+          document.head.appendChild(s);
+        </script>
       </div>
     </div>
   </header>
