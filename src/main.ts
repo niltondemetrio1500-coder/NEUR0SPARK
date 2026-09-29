@@ -100,4 +100,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 5. Compact legal dialogs opened from the footer
+  const legalLinks = document.querySelectorAll<HTMLAnchorElement>('[data-legal-dialog]');
+  legalLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const dialogId = link.dataset.legalDialog;
+      const dialog = dialogId ? document.getElementById(dialogId) as HTMLDialogElement | null : null;
+      if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-close-legal]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const dialog = button.closest('dialog') as HTMLDialogElement | null;
+      dialog?.close();
+    });
+  });
+
+  document.querySelectorAll<HTMLDialogElement>('.legal-dialog').forEach((dialog) => {
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  });
 });
